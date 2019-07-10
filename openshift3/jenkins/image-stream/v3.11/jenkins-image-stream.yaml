@@ -1,0 +1,47 @@
+kind: List
+apiVersion: v1
+metadata:
+  name: jenkins-image-stream
+  annotations:
+    description: ImageStream definition for Jenkins
+    openshift.io/provider-display-name: Red Hat, Inc.
+items:
+- kind: ImageStream
+  apiVersion: v1
+  metadata:
+    name: jenkins-openshift
+    annotations:
+      description: jenkins
+      openshift.io/display-name: jenkins
+      openshift.io/provider-display-name: Red Hat, Inc.
+      version: v3.11
+  labels:
+    jenkins: v3.11
+  spec:
+    tags:
+    - name: latest
+      annotations:
+        description: Latest build of jenkins image
+        iconClass: icon-jenkins
+        tags: jenkins,redhat,hidden
+        supports: jenkins:2
+        version: latest
+        openshift.io/display-name: jenkins
+      referencePolicy:
+        type: Local
+      from:
+        kind: DockerImage
+        name: registry.redhat.io/openshift3/jenkins-2-rhel7:v3.11
+    - name: 'v3.11'
+      annotations:
+        description: jenkins image
+        iconClass: icon-jenkins
+        tags: jenkins,redhat,hidden
+        supports: jenkins:2
+        version: 'v3.11'
+        openshift.io/display-name: jenkins
+      referencePolicy:
+        type: Local
+      from:
+        kind: DockerImage
+        name: registry.redhat.io/openshift3/jenkins-2-rhel7:v3.11
