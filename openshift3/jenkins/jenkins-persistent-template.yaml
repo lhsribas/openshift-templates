@@ -48,14 +48,16 @@ parameters:
   displayName: CPU limit
   name: CPU_LIMIT
   required: true
-  value: '2'
+  value: '1'
 - description: Maximum amount of memory the container can use.
   displayName: Memory Limit
   name: MEMORY_LIMIT
   value: 512Mi
 - description: The Time Zone of Country
   dispalyName: Time Zone
+  name: TZ
   required: true
+  value: 'America/Sao_Paulo'
 labels:
   app: jenkins-persistent
   template: jenkins-persistent-template
