@@ -29,7 +29,7 @@ parameters:
 - description: Name of the ImageStreamTag to be used for the Jenkins image.
   displayName: Jenkins ImageStreamTag
   name: JENKINS_IMAGE_STREAM_TAG
-  value: jenkins:v3.11
+  value: jenkins-openshift:v3.11
 - description: When a fatal error occurs, an error log is created with information and the state obtained at the time of the fatal error.
   displayName: Fatal Error Log File
   name: ENABLE_FATAL_ERROR_LOG_FILE
